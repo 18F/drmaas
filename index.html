@@ -1,0 +1,231 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en"><head>
+<title>ScaleNow</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta http-equiv="Content-Script-Type" content="text/javascript">
+<meta http-equiv="Content-Style-Type" content="text/css">  
+
+<script async="" src="//www.google-analytics.com/analytics.js"></script><script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+
+<script src="js/data/maleNames.js"></script>
+<script src="js/data/femaleNames.js"></script>
+<script src="js/data/lastNames.js"></script>
+<script src="js/generators.js"></script>
+<script src="js/data.js"></script>
+<script src="js/startup.js"></script>
+<script src="js/main.js"></script>
+<script src="js/style.js"></script>
+
+<link href="http://fonts.googleapis.com/css?family=Roboto:400,100,300,300italic,100italic,400italic,500,500italic,700,700italic,900,900italic" rel="stylesheet" type="text/css">
+<link href="http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600,700,900,200italic,300italic,400italic,600italic,700italic,900italic" rel="stylesheet" type="text/css">
+<link href="http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,800,700,400,600,300" rel="stylesheet" type="text/css">
+<link href="http://fonts.googleapis.com/css?family=Lato:100,300,400,700,900,100italic,300italic,400italic,700italic,900italic" rel="stylesheet" type="text/css">
+<link href="http://fonts.googleapis.com/css?family=Oswald:400,300,700" rel="stylesheet" type="text/css">
+<link href="http://fonts.googleapis.com/css?family=Lobster" rel="stylesheet" type="text/css">
+<link href="http://fonts.googleapis.com/css?family=Dancing+Script:400,700" rel="stylesheet" type="text/css">
+<link href="http://fonts.googleapis.com/css?family=Allan:400,700" rel="stylesheet" type="text/css">
+<link href="http://fonts.googleapis.com/css?family=Corben:400" rel="stylesheet" type="text/css">
+<link href="http://fonts.googleapis.com/css?family=Nobile" rel="stylesheet" type="text/css">
+<link href="http://fonts.googleapis.com/css?family=Droid+Serif" rel="stylesheet" type="text/css">
+<link href="http://fonts.googleapis.com/css?family=Droid+Sans" rel="stylesheet" type="text/css">
+<link href="http://fonts.googleapis.com/css?family=Lekton" rel="stylesheet" type="text/css">
+<link href="http://fonts.googleapis.com/css?family=Molengo" rel="stylesheet" type="text/css">
+<link href="http://fonts.googleapis.com/css?family=Cardo" rel="stylesheet" type="text/css">
+<link href="http://fonts.googleapis.com/css?family=Josefin+Sans" rel="stylesheet" type="text/css">
+<link href="http://fonts.googleapis.com/css?family=Crimson+Text" rel="stylesheet" type="text/css">
+<link href="http://fonts.googleapis.com/css?family=Allerta" rel="stylesheet" type="text/css">
+<link href="http://fonts.googleapis.com/css?family=Kaushan+Script" rel="stylesheet" type="text/css">
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
+
+
+<link rel="stylesheet" href="css/default.css">
+<link rel="stylesheet" href="css/custom.css">
+
+<style id="style-1-cropbar-clipper">/* Copyright 2014 Evernote Corporation. All rights reserved. */
+.en-markup-crop-options {
+    top: 18px !important;
+    left: 50% !important;
+    margin-left: -100px !important;
+    width: 200px !important;
+    border: 2px rgba(255,255,255,.38) solid !important;
+    border-radius: 4px !important;
+}
+
+.en-markup-crop-options div div:first-of-type {
+    margin-left: 0px !important;
+}
+</style></head>
+
+<body id="body" style="display: block; font-family: 'Arial Black', 'Droid Sans', Roboto, Helvetica, 'Source Sans Pro';">
+
+  <div class="site-wrapper" id="home" style="box-shadow: rgba(0, 0, 0, 0.65098) 0px 0px 88px inset;">
+    <div class="before" style="background-image: url('img/bg/105.jpg');" img="" bg=""></div>
+	  <div class="navbar masthead clearfix scrolled" id="navigation" style="background: rgb(245, 132, 50);">
+      <div class="inner">
+        <a href="#home" style="color: rgb(255, 255, 255);">
+          <h3 class="masthead-brand" id="logo" style="letter-spacing: -0.1px; font-size: 1.9em; font-family: Arial, Helvetica, Cardo, Allan, Gadget;"><span class="fa fa-fw fa-stack-overflow"></span>DRMaaS</h3>
+        </a>
+        <nav>
+          <ul class="nav masthead-nav">
+            <li class="active"><a href="#" style="color: rgb(255, 255, 255);">Home</a></li>
+            <li><a href="#about" style="color: rgb(255, 255, 255);">About</a></li>
+
+            <li><a href="#trynow" style="color: rgb(255, 255, 255);">Try Now</a></li>
+            <li><a href="#" data-toggle="modal" data-target="#basicModal" style="color: rgb(255, 255, 255);">Contact Us</a></li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+
+    <div class="site-wrapper-inner" id="home-content" style="background: rgba(0, 0, 0, 0.388235);">
+
+      <div id="home-text-wrapper" style="margin-top: 50px;">
+
+        <div id="home-text">
+          <h1 class="cover-heading" id="cover-heading" style="font-family: 'Open Sans', Molengo, Impact, Allan, Allerta; font-size: 5rem; letter-spacing: 3.3px;">Free your data from the filing cabinet.</h1>
+          <p class="lead" id="opener" style="font-weight: bold;">Document Repository Modernization as a Service</p>
+          <p class="lead">
+            <a href="index.html" class="btn btn-lg btn-default" style="background-color: rgb(245, 132, 50);">Get started</a>
+          </p>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+
+
+      <div class="container row featurette quote-row" id="test1-cont" style="background-color: rgb(2, 115, 197);">
+        <div class="col-md-7">
+          <blockquote><p class="lead" id="test1">Before using DRMaaS, all of our data was locked in a cave, literally.  Now, our documents are all online, are highly searchable; super analyzable; and cheaper to retain then ever before.</p>
+          <h2 class="featurette-heading" id="name1">Sonny Ramaswamy<br><span class="text-muted">Director, USDA</span></h2></blockquote>
+        </div>
+      </div>
+
+  <div class="container marketing" id="about">
+
+      <div class="row">
+        <h2>Why <span class="company-name">DRMaaS</span>?</h2>
+      </div>
+      <div class="row">
+        <div class="col-lg-4">
+          <div class="backgroundcircle" id="icon1" style="background-color: rgb(245, 132, 50);"><i class="fa fa-diamond"></i></div>
+          <h2 id="subHeading1">Data Science</h2>
+          <p id="subDesc1">Turn your paper files into super mineable and refineable data.  Learn more about the people you service, and do so easily and effectively.</p>
+        </div><!-- /.col-lg-4 -->
+        <div class="col-lg-4">
+          <div class="backgroundcircle" id="icon2" style="background-color: rgb(245, 132, 50);"><i class="fa fa-university"></i></div>
+          <h2 id="subHeading2">Compliant</h2>
+          <p id="subDesc2">508, FOIA, and PRA compliant out of the box.  Ensure your agency is compliant on all levels so you can focus on serving your customers.</p>
+        </div><!-- /.col-lg-4 -->
+        <div class="col-lg-4">
+          <div class="backgroundcircle" id="icon3" style="background-color: rgb(245, 132, 50);"><i class="fa fa-money"></i></div>
+          <h2 id="subHeading3">Cost Effective</h2>
+          <p id="subDesc3">Easy fulfillment that makes both dollars, and sense. Drastically reduce the costs associated with storing paper records and handing regulatory compliance yourself.</p>
+        </div><!-- /.col-lg-4 -->
+      </div><!-- /.row -->
+
+    </div><!-- /.container -->
+
+          <!-- START THE FEATURETTES -->
+
+
+   <div class="container row featurette quote-row" id="test2-cont" style="background-color: rgb(2, 115, 197);">
+        <div class="col-md-7">
+          <blockquote><p class="lead" id="test2">Before, FOIA requests would take us years to process.  Now, we can produce 508 compliant FOIA responses in minutes, while saving $1.5 million a year.
+</p>
+          <h2 class="featurette-heading" id="name2">Ash Carter<br><span class="text-muted">Secretary, Department of Defense</span></h2></blockquote>
+        </div>
+    </div>
+
+      <!-- /END THE FEATURETTES -->
+
+    <!-- /.container -->
+
+
+
+
+
+  <div class="container featurette" id="oursponsors">
+    <h2 id="sponsortitle">Our Key Partners</h2>
+    <div id="sponsorholder" class="row">
+    	<div id="sponsorinner">
+		    <div class="col-lg-4">
+			    <a class="slink" id="slink1" href="http://tiffzhang.com/startup/?s=152652370896">
+			      <h3 class="sponsor" id="slogo1" style="color: rgb(245, 132, 50);/* text-transform: lowercase; */ letter-spacing: 0.8px; font-size: 2.1em; font-family: 'Source Sans Pro', Charcoal, 'Lucida Grande', Allan, Impact;"><i class="fa fa-university"></i>NARA</h3>
+				  </a>
+			  </div>
+			  <div class="col-lg-4">
+			    <a class="slink" id="slink2" href="http://tiffzhang.com/startup/?s=111679719161">
+			      <h3 class="sponsor" id="slogo2" style="color: rgb(245, 132, 50);/* text-transform: lowercase; */ letter-spacing: 0.2px; font-size: 2.1em; font-family: Molengo, Cardo, Corben, 'Open Sans', Verdana;"><span class="fa fa-book"></span> ALA</h3>
+			    </a>
+		    </div>
+		    <div class="col-lg-4">
+			    <a class="slink" id="slink3" href="http://tiffzhang.com/startup/?s=23637778773">
+			      <h3 class="sponsor" id="slogo3" style="color: rgb(245, 132, 50);/* text-transform: lowercase; */ letter-spacing: -1.2px; font-size: 2.1em; font-family: 'Crimson Text', Helvetica, 'Lucida Grande', Tahoma, Geneva;"><i class="fa fa-star-o"></i> GSA</h3>
+			    </a>
+		    </div>
+	    </div>
+    </div>
+
+  </div>
+
+
+  <!-- Modal -->
+  <div class="modal fade" id="basicModal" tabindex="-1" role="dialog" aria-labelledby="basicModal" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true"></button>
+            <h4 class="modal-title" id="myModalLabel">What is this?</h4>
+            </div>
+            <div class="modal-body" style="background-color: rgb(255, 152, 70);">
+                The Startup Generator is a collaboration between <a href="http://tiffzhang.com/" target="_blank">Tiffany Zhang</a> and <a href="http://mikebradley.me/" target="_blank">Mike Bradley</a>. <span class="company-name">ScaleNow</span> is not a real company.
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal" style="background-color: rgb(245, 132, 50);">Done</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+    <!-- FOOTER -->
+      <footer style="background: rgb(51, 51, 51);">
+  <div id="trynow">
+    <h2 id="bethefirst">Learn more about how NTIS can help you.</h2>
+    <form method="post" action="about.html" id="signup" style="color: rgb(245, 132, 50);">
+      <input type="text" id="emailbox" name="Email" placeholder="Your Email" style="font-family: 'Arial Black', 'Droid Sans', Roboto, Helvetica, 'Source Sans Pro'; border-color: rgb(245, 132, 50);">
+      <a class="btn btn-default" href="#" data-toggle="modal" data-target="#basicModal" style="color: rgb(255, 255, 255); background-color: rgb(245, 132, 50);">Let's Do It!</a>
+    </form>
+  </div>
+
+
+        <!--Share Buttons--><ul class="share-buttons">
+  <li><a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Ftiffzhang.com%2Fstartup&amp;t=" target="_blank" title="Share on Facebook" onclick="window.open('https://www.facebook.com/sharer/sharer.php?u=' + encodeURIComponent(document.URL) + '&amp;t=' + encodeURIComponent(document.URL)); return false;" style="color: rgb(245, 132, 50);"><i class="fa fa-facebook-square fa-2x"></i></a></li>
+  <li><a href="https://twitter.com/intent/tweet?source=http%3A%2F%2Ftiffzhang.com%2Fstartup&amp;text=:%20http%3A%2F%2Ftiffzhang.com%2Fstartup" target="_blank" title="Tweet" onclick="window.open('https://twitter.com/intent/tweet?text=' + encodeURIComponent(document.title) + ':%20' + encodeURIComponent(document.URL)); return false;" style="color: rgb(245, 132, 50);"><i class="fa fa-twitter-square fa-2x"></i></a></li>
+  <li><a href="https://plus.google.com/share?url=http%3A%2F%2Ftiffzhang.com%2Fstartup" target="_blank" title="Share on Google+" onclick="window.open('https://plus.google.com/share?url=' + encodeURIComponent(document.URL)); return false;" style="color: rgb(245, 132, 50);"><i class="fa fa-google-plus-square fa-2x"></i></a></li>
+  <li><a href="http://www.tumblr.com/share?v=3&amp;u=http%3A%2F%2Ftiffzhang.com%2Fstartup&amp;t=&amp;s=" target="_blank" title="Post to Tumblr" onclick="window.open('http://www.tumblr.com/share?v=3&amp;u=' + encodeURIComponent(document.URL) + '&amp;t=' +  encodeURIComponent(document.title)); return false;" style="color: rgb(245, 132, 50);"><i class="fa fa-tumblr-square fa-2x"></i></a></li>
+  <li><a href="http://www.reddit.com/submit?url=http%3A%2F%2Ftiffzhang.com%2Fstartup&amp;title=" target="_blank" title="Submit to Reddit" onclick="window.open('http://www.reddit.com/submit?url=' + encodeURIComponent(document.URL) + '&amp;title=' +  encodeURIComponent(document.title)); return false;" style="color: rgb(245, 132, 50);"><i class="fa fa-reddit-square fa-2x"></i></a></li>
+  <li><a href="http://www.linkedin.com/shareArticle?mini=true&amp;url=http%3A%2F%2Ftiffzhang.com%2Fstartup&amp;title=&amp;summary=&amp;source=http%3A%2F%2Ftiffzhang.com%2Fstartup" target="_blank" title="Share on LinkedIn" onclick="window.open('http://www.linkedin.com/shareArticle?mini=true&amp;url=' + encodeURIComponent(document.URL) + '&amp;title=' +  encodeURIComponent(document.title)); return false;" style="color: rgb(245, 132, 50);"><i class="fa fa-linkedin-square fa-2x"></i></a></li>
+  <li><a href="http://wordpress.com/press-this.php?u=http%3A%2F%2Ftiffzhang.com%2Fstartup&amp;t=&amp;s=" target="_blank" title="Publish on WordPress" onclick="window.open('http://wordpress.com/press-this.php?u=' + encodeURIComponent(document.URL) + '&amp;t=' +  encodeURIComponent(document.title)); return false;" style="color: rgb(245, 132, 50);"><i class="fa fa-wordpress fa-2x"></i></a></li>
+  <li><a href="mailto:?subject=&amp;body=:%20http%3A%2F%2Ftiffzhang.com%2Fstartup" target="_blank" title="Email" onclick="window.open('mailto:?subject=' + encodeURIComponent(document.title) + '&amp;body=' +  encodeURIComponent(document.URL)); return false;" style="color: rgb(245, 132, 50);"><i class="fa fa-envelope fa-2x"></i></a></li>
+</ul><!--End Share Buttons-->
+        <div id="footerWords"><p>© <script>document.write(new Date().getFullYear())</script>2016 <span class="company-name">NTIS</span> · <a href="#" style="color: rgb(245, 132, 50);">Terms</a></p></div>
+        <p><a href="#" style="color: rgb(245, 132, 50);">Back to top</a></p>
+      </footer>
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-53388207-2', 'auto');
+  ga('send', 'pageview');
+</script>
+
+
+</body></html>
